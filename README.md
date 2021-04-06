@@ -13,7 +13,7 @@ Simple mosquitto plugins that notifies client disconnection events to a given to
 1. Copy the contents of this repo's src folder into mosquitto/plugins/disconnections
     ```bash
     git clone https://github.com/albertogeniola/mosquitto-disconnections-plugin
-    cp -R mosquitto-disconnections-plugin/* mosquitto/plugins/disconnections
+    cp -R mosquitto-disconnections-plugin/src/* mosquitto/plugins/disconnections
     ```
 1. Edit mosquitto/plugins/CMakeLists.txt and add the following line at the end of it
     ```

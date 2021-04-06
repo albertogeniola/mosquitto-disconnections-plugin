@@ -26,6 +26,7 @@
 #endif
 
 #define UNUSED(A) (void)(A)
+#define AUTH_OPT_TARGET_TOPIC "target_topic"
 #define DEFAULT_TARGET_TOPIC "$SYS/disconnections"
 
 static char* target_topic = NULL;
@@ -45,7 +46,7 @@ static int callback_disconnect(int event, void* event_data, void* userdata)
 {
 	struct mosquitto_evt_disconnect* ed = event_data;
 	const char* client_id = mosquitto_client_id(ed->client);
-	const char* username = mosquitto_client_id(ed->client);
+	const char* username = mosquitto_client_username(ed->client);
 	const char* addr = mosquitto_client_address(ed->client);
 	publish_disconnect_event(client_id, username, addr, ed->reason);
 }
@@ -71,7 +72,7 @@ int mosquitto_plugin_init(mosquitto_plugin_id_t* identifier, void** user_data, s
 	
 	// Parse Options
 	for (i = 0; i < option_count; i++) {
-		if (!strcasecmp(options[i].key, "target_topic")) {
+		if (!strcasecmp(options[i].key, AUTH_OPT_TARGET_TOPIC)) {
 			target_topic = mosquitto_strdup(options[i].value);
 			if (target_topic == NULL) {
 				return MOSQ_ERR_NOMEM;

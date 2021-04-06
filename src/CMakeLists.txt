@@ -12,4 +12,4 @@ if(WIN32)
 endif(WIN32)
 
 # Don't install, these are example plugins only.
-#install(TARGETS mosquitto_disconnections RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}" LIBRARY DESTINATION "${CMAKE_INSTALL_LIBDIR}")
+install(TARGETS mosquitto_disconnections RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}" LIBRARY DESTINATION "${CMAKE_INSTALL_LIBDIR}")

@@ -26,3 +26,5 @@ Simple mosquitto plugins that notifies client disconnection events to a given to
     cd mosquitto
     cmake .
     ```
+    
+    __Note__: when bulding on Windows, it is recommended to use CMake-GUI. Just open the mosquitto folder, configure and store Visual Studio solution files into another directory.

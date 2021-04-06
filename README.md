@@ -21,3 +21,8 @@ Simple mosquitto plugins that notifies client disconnection events to a given to
     add_subdirectory(disconnections)
     ```
 1. You can now run CMake to generate solution files
+    ```
+    # ...
+    cd mosquitto
+    cmake .
+    ```
